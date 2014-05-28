@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[zengxx's notes]]></title>
+  <link href="http://zengxunxun.github.io/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.io/"/>
+  <updated>2014-05-28T03:29:25-04:00</updated>
+  <id>http://zengxunxun.github.io/</id>
+  <author>
+    <name><![CDATA[zengxx]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tmux Setting]]></title>
+    <link href="http://zengxunxun.github.io/blog/2014/04/09/tmux/"/>
+    <updated>2014-04-09T02:40:24-04:00</updated>
+    <id>http://zengxunxun.github.io/blog/2014/04/09/tmux</id>
+    <content type="html"><![CDATA[<h4>configuration</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="nb">set</span> -g prefix ^q
+unbind ^b
+<span class="nb">bind </span>q send-prefix
+
+<span class="nb">bind</span> ^h split-window -h
+<span class="nb">bind</span> ^v split-window -v
+<span class="nb">bind</span> ^x <span class="nb">kill</span>-pane
+<span class="nb">bind</span> ^w choose-window
+<span class="nb">bind</span> ^c new-window
+<span class="nb">bind</span> ^l next-layout
+
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Up&#39;</span>     resize-pane -U 2
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Down&#39;</span>   resize-pane -D 2
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Left&#39;</span>   resize-pane -L 2
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Right&#39;</span>  resize-pane -R 2
+
+<span class="nb">set</span>-window-option -g mode-keys vi 
+
+<span class="nb">bind</span> ^q <span class="k">select</span>-pane -t :.+
+<span class="nb">bind</span> ^o rotate-window -D
+
+<span class="nb">bind</span> -n ^p previous-window
+<span class="nb">bind</span> -n ^n next-window
+
+<span class="nb">set</span> -g default-terminal <span class="s2">&quot;screen-256color&quot;</span>
+<span class="nb">set</span> -g status-bg colour235
+<span class="nb">set</span> -g status-fg colour249
+<span class="nb">set</span> -g status-left      <span class="s2">&quot;&quot;</span>
+<span class="nb">set</span> -g status-right     <span class="s2">&quot;&quot;</span>
+<span class="nb">set</span>-window-option -g window-status-current-fg cyan
+</code></pre></div>
+
+
+
+
+<!--more-->
+
+
+<h4>screenshot</h4>
+
+<p><a href="http://zengxunxun.gitcafe.com/res/tmux.png"><img src="http://zengxunxun.gitcafe.com/res/tmux.png" class="img-polaroid"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH Setting]]></title>
+    <link href="http://zengxunxun.github.io/blog/2014/04/08/ssh-config/"/>
+    <updated>2014-04-08T07:43:23-04:00</updated>
+    <id>http://zengxunxun.github.io/blog/2014/04/08/ssh-config</id>
+    <content type="html"><![CDATA[<h4>tunnel</h4>
+
+<div class="highlight"><pre><code class="bash">ssh username@host -p port -D 9998  -N -f
+</code></pre></div>
+
+
+
+
+<!--more-->
+
+
+<h4>config file</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi ~/.ssh/config</span>
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    <span class="nv">LogLevel</span><span class="o">=</span>quiet 
+    <span class="nv">ForwardX11</span><span class="o">=</span>yes
+
+Host vps
+    HostName 23.252.110.14
+    Port 22
+    User www-data
+    IdentityFile ~/.ssh/id_rsa
+</code></pre></div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gtk+ Theme in Openbox]]></title>
+    <link href="http://zengxunxun.github.io/blog/2014/04/08/gtk-theme/"/>
+    <updated>2014-04-08T05:32:40-04:00</updated>
+    <id>http://zengxunxun.github.io/blog/2014/04/08/gtk-theme</id>
+    <content type="html"><![CDATA[<h4>gtk3</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi ~/.config/gtk-3.0/settings.ini</span>
+<span class="o">[</span>Settings<span class="o">]</span>
+gtk-theme-name <span class="o">=</span> Adwaita
+</code></pre></div>
+
+
+
+
+<!--more-->
+
+
+<div class="row center">
+<div class="span4">
+<a href="http://zengxunxun.gitcafe.com/res/gtk3_befor.png"><img src="http://zengxunxun.gitcafe.com/res/gtk3_befor.png" class="img-polaroid"></a>
+<span class="label">befor</span>
+</div>
+<div class="span4">
+<a href="http://zengxunxun.gitcafe.com/res/gtk3_after.png"><img src="http://zengxunxun.gitcafe.com/res/gtk3_after.png" class="img-polaroid"></a>
+<span class="label">after</span>
+</div>
+</div>
+
+
+<h4>QT</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi ~/.config/Trolltech.conf</span>
+<span class="o">[</span>Qt<span class="o">]</span>
+<span class="nv">style</span><span class="o">=</span>GTK+
+</code></pre></div>
+
+
+
+
+<div class="row center">
+<div class="span4">
+<a href="http://zengxunxun.gitcafe.com/res/vbox_befor.png"><img src="http://zengxunxun.gitcafe.com/res/vbox_befor.png" class="img-polaroid"></a>
+<span class="label">befor</span>
+</div>
+<div class="span4">
+<a href="http://zengxunxun.gitcafe.com/res/vbox_after.png"><img src="http://zengxunxun.gitcafe.com/res/vbox_after.png" class="img-polaroid"></a>
+<span class="label">after</span>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[APT Setting]]></title>
+    <link href="http://zengxunxun.github.io/blog/2014/04/08/APT/"/>
+    <updated>2014-04-08T03:46:14-04:00</updated>
+    <id>http://zengxunxun.github.io/blog/2014/04/08/APT</id>
+    <content type="html"><![CDATA[<h4>proxy</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi /etc/apt/apt.conf</span>
+Acquire::http::proxy <span class="s2">&quot;http://127.0.0.1:8087&quot;</span>;
+</code></pre></div>
+
+
+
+
+<!--more-->
+
+
+<h4>cache location</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi /etc/apt/apt.conf</span>
+dir::cache::archives /new/cache/is/here
+</code></pre></div>
+
+
+<h4>mirrors</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi /etc/apt/sources.list</span>
+deb http://deb.opera.com/opera/ stable non-free <span class="c">#Opera Browser (final releases)</span>
+deb http://dl.google.com/linux/chrome/deb/ stable main <span class="c">#Chrome</span>
+deb http://www.scootersoftware.com/ stable non-free <span class="c">#Bcompare</span>
+deb http://packages.linuxmint.com/ debian main upstream import <span class="c">#Firefox</span>
+</code></pre></div>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>zengxx's notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="zengxx">
+    
+    <meta name="description" content="2014-04-09 Tmux Setting configuration set -g prefix ^q
+unbind ^b
+bind q send-prefix bind ^h split-window -h
+bind ^v split-window -v
+bind ^x kill- &hellip;">
+
+    <!-- Le styles -->
+    <link href="/bs/css/bootstrap.css" rel="stylesheet">
+    <link href="/bs/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/bs/css/docs.css" rel="stylesheet">
+
+    <!--
+    <link href="/bs/css/ui.totop.css" rel="stylesheet">
+    <link href="/bs/css/jquery.fancybox.css" rel="stylesheet">
+    -->
+    <link href="/bs/css/pygments-manni.css" rel="stylesheet">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+    <!-- Le script -->
+    <script type="text/javascript" src="/bs/js/jquery.js"></script>
+    <script type="text/javascript" src="/bs/js/bootstrap.min.js"></script>
+    <!--
+    <script type="text/javascript" src="/bs/js/jquery.ui.totop.js"></script>
+    <script type="text/javascript" src="/bs/js/easing.js"></script>
+    <script type="text/javascript" src="/bs/js/jquery.fancybox.js"></script>
+    -->
+    <script type="text/javascript" src="/bs/js/docs.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/bs/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    
+</head>
+
+
+<body>
+    <div class="container">
+        <div style="text-align: center">
+            <div class="row"><div class="span8 offset2">
+    <div class="bander">
+        <p class="title">zengxx's notes</p>
+        <div>
+            <p class="subtitle">Imagine all the people living for today</p>
+        </div>
+    </div>
+</div>
+
+</div>
+            <div class="row"><div class="span8 offset2">
+    <!--
+    <div class="navbar">
+        <div class="navbar-inner">
+            -->
+            <div class="navigation">
+                <ul class="breadcrumb">
+                    <li><a href="/">Home</a><span class="divider">/</span></li>
+                    <li><a href="/blog/archives">Archives</a><span class="divider">/</span></li>
+                    <li><a href="/blog/bookmarks">Bookmarks</a><span class="divider">/</span></li>
+                    <li><a href="/blog/about">About</a><span class="divider">/</span></li>
+                </ul>
+            </div>
+            <!--
+            <form class="navbar-search pull-right" action="http://google.com/search" method="get">
+                <input type="hidden" name="q" value="site:zengxunxun.github.io" />
+                <input type="text" class="search-query span2" name="q" results="0" placeholder="Search"/>
+            </form>
+            -->
+            <!--
+        </div>
+    </div>
+    -->
+</div>
+
+</div>
+        </div>
+        <div class="row"><div class="span8 offset2">
+    
+    
+    
+    <div class="excerpt">
+        
+    
+        <p class="muted">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-09T02:40:24-04:00" pubdate data-updated="true">2014-04-09</time></p>
+    
+    
+        <h3><a href="/blog/2014/04/09/tmux/">Tmux Setting</a></h3>
+        
+
+
+
+    <h4>configuration</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="nb">set</span> -g prefix ^q
+unbind ^b
+<span class="nb">bind </span>q send-prefix
+
+<span class="nb">bind</span> ^h split-window -h
+<span class="nb">bind</span> ^v split-window -v
+<span class="nb">bind</span> ^x <span class="nb">kill</span>-pane
+<span class="nb">bind</span> ^w choose-window
+<span class="nb">bind</span> ^c new-window
+<span class="nb">bind</span> ^l next-layout
+
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Up&#39;</span>     resize-pane -U 2
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Down&#39;</span>   resize-pane -D 2
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Left&#39;</span>   resize-pane -L 2
+<span class="nb">bind</span> -n ^<span class="s1">&#39;Right&#39;</span>  resize-pane -R 2
+
+<span class="nb">set</span>-window-option -g mode-keys vi 
+
+<span class="nb">bind</span> ^q <span class="k">select</span>-pane -t :.+
+<span class="nb">bind</span> ^o rotate-window -D
+
+<span class="nb">bind</span> -n ^p previous-window
+<span class="nb">bind</span> -n ^n next-window
+
+<span class="nb">set</span> -g default-terminal <span class="s2">&quot;screen-256color&quot;</span>
+<span class="nb">set</span> -g status-bg colour235
+<span class="nb">set</span> -g status-fg colour249
+<span class="nb">set</span> -g status-left      <span class="s2">&quot;&quot;</span>
+<span class="nb">set</span> -g status-right     <span class="s2">&quot;&quot;</span>
+<span class="nb">set</span>-window-option -g window-status-current-fg cyan
+</code></pre></div>
+
+
+
+
+
+    
+    
+    <a  href="/blog/2014/04/09/tmux/">Read on &rarr;</a>
+    
+
+
+    </div>
+    
+    
+    <div class="excerpt">
+        
+    
+        <p class="muted">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-08T07:43:23-04:00" pubdate data-updated="true">2014-04-08</time></p>
+    
+    
+        <h3><a href="/blog/2014/04/08/ssh-config/">SSH Setting</a></h3>
+        
+
+
+
+    <h4>tunnel</h4>
+
+<div class="highlight"><pre><code class="bash">ssh username@host -p port -D 9998  -N -f
+</code></pre></div>
+
+
+
+
+
+    
+    
+    <a  href="/blog/2014/04/08/ssh-config/">Read on &rarr;</a>
+    
+
+
+    </div>
+    
+    
+    <div class="excerpt">
+        
+    
+        <p class="muted">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-08T05:32:40-04:00" pubdate data-updated="true">2014-04-08</time></p>
+    
+    
+        <h3><a href="/blog/2014/04/08/gtk-theme/">Gtk+ Theme in Openbox</a></h3>
+        
+
+
+
+    <h4>gtk3</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi ~/.config/gtk-3.0/settings.ini</span>
+<span class="o">[</span>Settings<span class="o">]</span>
+gtk-theme-name <span class="o">=</span> Adwaita
+</code></pre></div>
+
+
+
+
+
+    
+    
+    <a  href="/blog/2014/04/08/gtk-theme/">Read on &rarr;</a>
+    
+
+
+    </div>
+    
+    
+    <div class="excerpt">
+        
+    
+        <p class="muted">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-08T03:46:14-04:00" pubdate data-updated="true">2014-04-08</time></p>
+    
+    
+        <h3><a href="/blog/2014/04/08/APT/">APT Setting</a></h3>
+        
+
+
+
+    <h4>proxy</h4>
+
+<div class="highlight"><pre><code class="bash"><span class="c">#vi /etc/apt/apt.conf</span>
+Acquire::http::proxy <span class="s2">&quot;http://127.0.0.1:8087&quot;</span>;
+</code></pre></div>
+
+
+
+
+
+    
+    
+    <a  href="/blog/2014/04/08/APT/">Read on &rarr;</a>
+    
+
+
+    </div>
+    
+    <div class="row">
+        <div class="pull-right">
+            <ul class="nav nav-pills">
+                
+                <li class="disabled"><a>&laquo;</a></li>
+                
+                
+                <li class="disabled"><a>&raquo;</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+    <div class="row"><div class="foot">
+    <p> Powered by <a href="http://octopress.org/" target="_blank">Octopress</a>&nbsp;&amp;&nbsp;<a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a></p>
+</div>
+
+</div>
+</body>
+</html>
